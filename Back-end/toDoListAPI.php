@@ -5,7 +5,11 @@ header("Access-Control-Allow-Headers: X-Requested-With");
 //URL da modificare 
 header("Access-Control-Allow-Origin: http://localhost:5173");
 
-$toDoList = ["Fare la spesa", "Buttare la spazzatura", "Collaudo macchina"];
+$toDoList = [
+    ['task' => 'Fare la spesa'],
+    ['task' => 'Buttare la spazzatura'],
+    ['task' => 'Collaudo macchina']
+];
 
 $jsonToDoList = json_encode($toDoList);
 echo $jsonToDoList;
