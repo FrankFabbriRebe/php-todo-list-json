@@ -8,7 +8,7 @@ header("Access-Control-Allow-Origin: http://localhost:5173");
 $toDoList = ["Fare la spesa", "Buttare la spazzatura", "Collaudo macchina"];
 
 $jsonToDoList = json_encode($toDoList);
-// echo $jsonToDoList;
+echo $jsonToDoList;
 file_put_contents("toDoList.json", $jsonToDoList);
 
 ?>
