@@ -7,7 +7,9 @@ export default {
     name: "ToDoList",
 
     data() {
-        toDoList: []
+        return {
+            toDoList: []
+        }
     },
 
     mounted() {
