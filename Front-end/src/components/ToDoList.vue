@@ -1,3 +1,18 @@
+<template>
+    <h1>To do list:</h1>
+
+    <form @submit.prevent="createTask">
+        <input type="text" name="text" v-model="newTaskText">
+        <input type="submit" value="CREATE">
+    </form>
+
+    <ul>
+        <li v-for="(toDo, index) in toDoList" :key="index">
+            {{ toDo.text }}
+        </li>
+    </ul>
+</template>
+
 <script>
 
 import axios from 'axios';
@@ -9,7 +24,16 @@ export default {
     data() {
         return {
             toDoList: [],
+            newTaskText: "",
         }
+    },
+
+    methods: {
+
+        createTask() {
+
+        }
+
     },
 
     mounted() {
@@ -19,7 +43,7 @@ export default {
             .then(res => {
                 // console.log("data: " + JSON.stringify(res.data));
                 t.toDoList = res.data;
-                console.log(t.toDoList);
+                // console.log(t.toDoList);
             }).catch(err => console.error(err));
 
     }
@@ -29,19 +53,3 @@ export default {
 
 
 </script>
-
-
-<template>
-    <h1>To do list:</h1>
-
-    <form @submit.prevent="createTask">
-        <input type="text" name="text" v-model="newTaskText">
-        <input type="submit" value="CREATE">
-    </form>
-
-    <ul>
-        <li v-for="(toDo, index) in toDoList" :key="index">
-            {{ toDo.task }}
-        </li>
-    </ul>
-</template>
