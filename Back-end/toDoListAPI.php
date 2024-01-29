@@ -6,9 +6,22 @@ header("Access-Control-Allow-Headers: X-Requested-With");
 header("Access-Control-Allow-Origin: http://localhost:5173");
 
 $toDoList = [
-    ['task' => 'Fare la spesa'],
-    ['task' => 'Buttare la spazzatura'],
-    ['task' => 'Collaudo macchina']
+
+    [
+        "text" => "Fare la spesa",
+        "completed" => false,
+    ],
+
+    [
+        "text" => "Fare il bucato",
+        "completed" => false,
+    ],
+
+    [
+        "text" => "Fare il letto",
+        "completed" => false,
+    ]
+
 ];
 
 $jsonToDoList = json_encode($toDoList);
