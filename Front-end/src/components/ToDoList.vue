@@ -8,7 +8,7 @@ export default {
 
     data() {
         return {
-            toDoList: []
+            toDoList: [],
         }
     },
 
@@ -33,6 +33,12 @@ export default {
 
 <template>
     <h1>To do list:</h1>
+
+    <form @submit.prevent="createTask">
+        <input type="text" name="text" v-model="newTaskText">
+        <input type="submit" value="CREATE">
+    </form>
+
     <ul>
         <li v-for="(toDo, index) in toDoList" :key="index">
             {{ toDo.task }}
